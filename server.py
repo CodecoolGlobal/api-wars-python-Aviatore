@@ -12,7 +12,7 @@ def index():
     response = requests.get(url)
     obj = response.json()
 
-    return render_template('index.html', data=obj)
+    return render_template('index.html', data=obj, previous=url)
 
 
 @app.route('/planet', methods=['GET'])
@@ -24,7 +24,9 @@ def planet():
         response = requests.get(url)
         obj = response.json()
 
-    return render_template('planet.html', planet=obj)
+    previous = request.args.get('previous')
+
+    return render_template('planet.html', planet=obj, previous_url=previous)
 
 
 if __name__ == '__main__':
