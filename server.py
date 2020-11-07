@@ -15,5 +15,17 @@ def index():
     return render_template('index.html', data=obj)
 
 
+@app.route('/planet', methods=['GET'])
+def planet():
+    url = request.args.get('id')
+    obj = None
+
+    if url is not None:
+        response = requests.get(url)
+        obj = response.json()
+
+    return render_template('planet.html', planet=obj)
+
+
 if __name__ == '__main__':
     app.run()

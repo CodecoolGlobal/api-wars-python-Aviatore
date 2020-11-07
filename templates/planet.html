@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Planet</title>
+</head>
+<body>
+    <h1>Planet info</h1>
+    <a href="{{ url_for('index') }}">Back</a>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Residents</th>
+            <th>Terrain</th>
+        </tr>
+            <tr>
+                <td>
+                    {{ planet.name }}
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    {{ planet.terrain }}
+                </td>
+            </tr>
+    </table>
+
+</body>
+</html>

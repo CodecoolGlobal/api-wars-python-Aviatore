@@ -24,7 +24,7 @@
         {% for planet in data.results %}
             <tr>
                 <td>
-                    {{ planet.name }}
+                    <a href="{{ url_for("planet", id=planet.url) }}">{{ planet.name }}</a>
                 </td>
                 <td>
                     {{ planet.diameter }}
