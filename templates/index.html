@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Planets</title>
+</head>
+<body>
+    <h1>Planets</h1>
+    {% if data.previous is not none %}
+        <a href="{{ url_for('index', url=data.previous) }}">Previous</a>
+    {% endif %}
+
+    {% if data.next is not none %}
+        <a href="{{ url_for('index', url=data.next) }}">Next</a>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Diamter</th>
+            <th>Surface water</th>
+            <th>Population</th>
+        </tr>
+        {% for planet in data.results %}
+            <tr>
+                <td>
+                    {{ planet.name }}
+                </td>
+                <td>
+                    {{ planet.diameter }}
+                </td>
+                <td>
+                    {{ planet.surface_water }}
+                </td>
+                <td>
+                    {{ planet.population }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
